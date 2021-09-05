@@ -1,0 +1,19 @@
+{
+    "name": "Filtered Block",
+    "description": "Define filters to block specific elements in pages.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["jquery-3.6.0.slim.min.js", "content.js"]
+        }
+    ],
+    "permissions": ["storage", "activeTab", "scripting"],
+    "action": {
+        "default_popup": "main.html"
+    }
+}
